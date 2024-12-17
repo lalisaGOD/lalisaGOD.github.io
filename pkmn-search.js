@@ -12,7 +12,7 @@ async function getPkmn() {
         },
     );
 
-    const pkmnName = document.getElementById("pokemonName").value.toLowerCase();
+    const pkmnName = document.getElementById("pokemonName").value.replace(/^0+/,'').toLowerCase();
     try {
         const response = await axiosInstance.get(pkmnName);
         const data = response.data;
